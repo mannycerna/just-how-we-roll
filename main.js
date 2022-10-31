@@ -206,10 +206,13 @@ function getMean(array){
     return total/array.length;
 }
 
+
+//***********Stretch Goals************
+
 function getMedian(array){
     let median = '';
     let sortedArray = array.sort(function(a, b){return a-b});
-    
+
     if(sortedArray.length%2 !=  0){
         let midNbr = Math.floor(array.length/2)
         median = array[midNbr]
