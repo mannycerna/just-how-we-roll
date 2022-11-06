@@ -7,6 +7,7 @@ let doubleSixes = [];
 let twelves = [];
 let twenties = [];
 
+
 /********************
  * HELPER FUNCTIONS *
 ********************/
@@ -30,6 +31,11 @@ let imageD6 =  document.querySelector('#d6-roll');
 let meanD6 = document.querySelector('#d6-rolls-mean');
 let medianD6 = document.querySelector('#d6-rolls-median');
 let modeD6 = document.querySelector('#d6-rolls-mode');
+let tableD6 = document.querySelector('#arrPrintd6');
+
+
+
+
 
 //double-d6
 let imageDoubleD6_1 = document.querySelector('#double-d6-roll-1');
@@ -37,18 +43,21 @@ let imageDoubleD6_2 = document.querySelector('#double-d6-roll-2');
 let meanDoubleD6 = document.querySelector('#double-d6-rolls-mean');
 let medianDoubleD6 = document.querySelector('#double-d6-rolls-median');
 let modeDoubleD6 = document.querySelector('#double-d6-rolls-mode');
+let tableDouble6 = document.querySelector('#arrPrintdouble-d6');
 
 //d12-roll
 let imageD12 = document.querySelector('#d12-roll');
 let meanD12 = document.querySelector('#d12-rolls-mean');
 let medianD12 = document.querySelector('#d12-rolls-median');
 let modeD12 = document.querySelector('#d12-rolls-mode');
+let tableD12 = document.querySelector('#arrPrintd12');
 
 //d20-roll
 let imageD20 = document.querySelector('#d20-roll');
 let meanD20 = document.querySelector('#d20-rolls-mean');
 let medianD20 = document.querySelector('#d20-rolls-median');
 let modeD20 = document.querySelector('#d20-rolls-mode');
+let tableD20 = document.querySelector('#arrPrintd20');
 
 /*******************
  * EVENT LISTENERS *
@@ -123,6 +132,10 @@ modeD6.innerText = "N/A";
 modeDoubleD6.innerText = "N/A";
 modeD12.innerText = "N/A";
 modeD20.innerText = "N/A";
+
+//stats of mode
+// statNbrMostRoll.innerText = "N/A";
+// statCountMostRoll.innerText = "N/A";
 }
 
 reset();
@@ -140,6 +153,9 @@ function d6RollFunction(){
     meanD6.innerText = getMean(sixes).toFixed(2);
     medianD6.innerText = getMedian(sixes);
     modeD6.innerText = getMode(sixes);
+
+    // tableD6.innerHTML = sixes;
+
 
 }
 
@@ -234,6 +250,8 @@ function getMode(array){
     let count = 0;
     let item;
 
+
+
     for(let i = 0; i < array.length; i++){
         item = array[i];
 
@@ -249,5 +267,7 @@ function getMode(array){
             }
     }
     console.log(`max: ${item} most occurences:  ${max}  count:  ${count}`)
-    return max;
+    return  [max, count];
+
+    
 };
